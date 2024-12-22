@@ -1,0 +1,113 @@
+/* Contenedor principal con flexbox */
+.welcome-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-image: url('/assets/fondo.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* Ocupa toda la altura de la ventana */
+    color: white;
+}
+
+/* Columna izquierda: Texto */
+.welcome-left {
+    flex: 1;
+    /* Ocupa el 50% del espacio */
+    padding: 20px;
+}
+
+.welcome-left h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.welcome-left p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #e60000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #b00000;
+}
+
+/* Columna derecha: Imagen */
+.welcome-right {
+    flex: 1;
+    /* Ocupa el 50% del espacio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-right img {
+    max-width: 80%;
+    /* La imagen no ocupa más del 80% del espacio disponible */
+    height: auto;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 10;
+    padding: 20px;
+  }
+  
+  /* Contenedor dentro del header para flex */
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centra verticalmente los elementos */
+    width: 100%;
+  }
+  
+  /* Logo */
+  .logo img {
+    height: 80px;
+  }
+  
+  /* Menú de navegación */
+  .nav-menu {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+  }
+  
+  .nav-link.active {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .button-prices {
+    padding: 10px 15px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .button-prices:hover {
+    background-color: #b30000;
+  }
