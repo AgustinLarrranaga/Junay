@@ -5,11 +5,13 @@ import { WhatsappButtonComponent } from './whatsapp-button/whatsapp-button.compo
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { MarcasComponent } from './marcas/marcas.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactComponent } from './contact/contact.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MapaComponent, WhatsappButtonComponent,WelcomeComponent,ServiciosComponent,MarcasComponent],
+  imports: [MapaComponent, WhatsappButtonComponent,WelcomeComponent,ServiciosComponent,MarcasComponent,AboutUsComponent,ContactComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

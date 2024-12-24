@@ -1,0 +1,18 @@
+.container {
+    padding: 40px 20px;
+  }
+  
+  h2 {
+    font-weight: bold;
+  }
+  
+  p {
+    line-height: 1.6;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
