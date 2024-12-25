@@ -1,36 +1,44 @@
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    padding: 50px;
+}
+
+.row {
+    width: 100%;
+    height: 100%;
+    display: flex;
 }
 
 .left-side, .right-side {
-    flex: 1;
-    padding: 20px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    border: none;
+    border-radius: 17px;
 }
 
-.left-side{
-    align-items: left;
+.left-side {
+    background-color: #1F207C;
+    color: white;
+    width: 30%;
+}
+
+.right-side {
+    color: #333;
+    width: 70%;
 }
 
 form {
-    padding: 2rem;
-    border-radius: 20px;
-    background-color: #1F207C;
-    color: white;
+    width: 100%;
 }
 
-h2, h3 {
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-p {
-    line-height: 1.6;
+form .form-control {
+    width: 100%;
 }
 
 button {
@@ -39,13 +47,36 @@ button {
     color: white;
     font-size: 1rem;
     padding: 0.5rem 1rem;
+    cursor: pointer;
 }
 
-.right-side {
-    background-color: #f9f9f9;
-    border-radius: 20px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+h2, h3 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+p {
+    line-height: 1.6;
+}
+
+
+.contact-icons {
+    margin-top: 20px;
+    align-items: baseline !important;
+}
+
+.contact-icons .icon {
+    width: auto;
+    height: 24px;
+}
+
+.contact-icons p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.contact-icons .d-flex {
+    align-items: center;
 }

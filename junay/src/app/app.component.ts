@@ -7,11 +7,12 @@ import { ServiciosComponent } from './servicios/servicios.component';
 import { MarcasComponent } from './marcas/marcas.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MapaComponent, WhatsappButtonComponent,WelcomeComponent,ServiciosComponent,MarcasComponent,AboutUsComponent,ContactComponent],
+  imports: [MapaComponent, WhatsappButtonComponent,WelcomeComponent,ServiciosComponent,MarcasComponent,AboutUsComponent,ContactComponent,FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

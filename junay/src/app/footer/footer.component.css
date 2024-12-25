@@ -1,0 +1,67 @@
+.footer {
+    background-image: url('/assets/fondo.png');
+    background-size: cover;
+    background-position: center;
+    padding: 20px 0;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 5rem;
+    height: 13rem;
+    width: 100%;
+}
+.socials {
+    margin-right: auto; /* Mantiene el elemento a la izquierda */
+}
+
+.logo {
+    margin: 0 auto; /* Centra el elemento en el medio */
+    text-align: center; /* Asegura que el contenido esté centrado */
+}
+
+.whatsapp {
+    margin-left: auto; /* Mantiene el elemento a la derecha */
+}
+
+.socials, .logo, .whatsapp {
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.logo img {
+    width: 20rem;
+    height: 13rem;
+    margin-bottom: 10px;
+}
+
+.whatsapp .btn-whatsapp {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp .btn-whatsapp:hover {
+    background-color: darkred;
+}

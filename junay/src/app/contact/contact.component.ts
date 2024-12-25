@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class ContactComponent {
 
+    mail = "ventasjunay@gmail.com"
+    
     onSubmit() {
         alert('Formulario enviado correctamente');
       }
