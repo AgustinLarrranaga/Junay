@@ -27,7 +27,7 @@ export class WelcomeComponent {
     }
 
     onClickPrices(): void {
-        const driveUrl = '';
+        const driveUrl = 'https://docs.google.com/spreadsheets/d/1mWkQSYucKVXFyFcI89obPaqq0II5KOcv/edit?usp=sharing&ouid=108523827306433214171&rtpof=true&sd=true';
         window.open(driveUrl);
     }
 
