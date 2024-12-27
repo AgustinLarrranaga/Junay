@@ -8,14 +8,22 @@ import { MarcasComponent } from './marcas/marcas.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MapaComponent, WhatsappButtonComponent,WelcomeComponent,ServiciosComponent,MarcasComponent,AboutUsComponent,ContactComponent,FooterComponent],
+  imports: [CommonModule, MapaComponent, WhatsappButtonComponent, WelcomeComponent, ServiciosComponent, MarcasComponent, AboutUsComponent, ContactComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'junay';
+
+  handleHeaderClick(linkId: string): void {
+    const element = document.getElementById(linkId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth',block: 'center' }); 
+    }
+  }
 }
