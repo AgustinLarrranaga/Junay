@@ -61,6 +61,7 @@ p {
 
 
 .contact-icons {
+    cursor: pointer;
     margin-top: 20px;
     align-items: baseline !important;
 }

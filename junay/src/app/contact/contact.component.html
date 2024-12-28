@@ -47,15 +47,15 @@
             <p>Recordá pactar previamente por WhatsApp</p>
 
             <div class="contact-icons d-flex justify-content-center align-items-center mt-4">
-                <div class="d-flex flex-column align-items-center me-4">
+                <div class="d-flex flex-column align-items-center me-4" (click)="redirectToGoogleMaps()">
                     <img src="/assets/ubicationLogo.png" alt="Ubicación" class="icon">
                     <p class="mt-2">San Salvador 9758<br>Mar del Plata</p>
                 </div>
-                <div class="d-flex flex-column align-items-center me-4">
+                <div class="d-flex flex-column align-items-center me-4" (click)="redirectToWhatsApp()">
                     <img src="/assets/cellphoneLogo.png"  alt="Teléfono" class="icon">
                     <p class="mt-2">+54 9 2234 47-5381</p>
                 </div>
-                <div class="d-flex flex-column align-items-center">
+                <div class="d-flex flex-column align-items-center" (click)="sendEmail()" >
                     <img src="/assets/mailLogo.png" alt="Correo" class="icon">
                     <p class="mt-2">{{mail}}</p>
                 </div>

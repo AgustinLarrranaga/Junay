@@ -4,8 +4,8 @@
         <div class="socials">
             <p>Seguinos en nuestras redes sociales</p>
             <div class="social-icons">
-                <img src="/assets/facebook.png" alt="Facebook" class="social-icon">
-                <img src="/assets/instagram.png" alt="Instagram" class="social-icon">
+                <img src="/assets/facebook.png" alt="Facebook" class="social-icon" (click)="openFacebook()">
+                <img src="/assets/instagram.png" alt="Instagram" class="social-icon" (click)="openInstagram()">
             </div>
         </div>
 
@@ -17,7 +17,7 @@
         <!-- Contacto por WhatsApp -->
         <div class="whatsapp">
             <p>¿Tenés dudas? Envíanos un mensaje<br>por WhatsApp.</p>
-            <button class="btn-whatsapp">Enviar mensaje</button>
+            <button class="btn-whatsapp" (click)="redirectToWhatsApp()">Enviar mensaje</button>
         </div>
     </div>
 </footer>
