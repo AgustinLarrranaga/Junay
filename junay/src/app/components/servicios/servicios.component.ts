@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WhatsappService } from '../../services/whatspp/whatsapp.service';
 
 @Component({
     standalone: true,
@@ -8,7 +9,9 @@ import { Component } from '@angular/core';
 })
 export class ServiciosComponent {
 
-    constructor() {
+    constructor(private whatsappService: WhatsappService) { }
 
+    openWhatsApp(): void {
+        this.whatsappService.openWhatsApp();
     }
 }

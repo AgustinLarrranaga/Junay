@@ -2,36 +2,35 @@
     <div class="row gx-0">
         <!-- Formulario -->
         <div class="col-md-6 left-side">
-            <form>
-                <!-- Nombre -->
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                 <div class="mb-3">
-                    <label for="nombre" class="form-label">Apellido y nombre</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Ingresa apellido y nombre">
+                  <label for="nombre" class="form-label">Apellido y nombre</label>
+                  <input type="text" id="nombre" class="form-control" formControlName="nombre" placeholder="Ingresa apellido y nombre" />
                 </div>
-
-                <!-- Correo Electrónico -->
+              
                 <div class="mb-3">
-                    <label for="email" class="form-label">Correo Electrónico</label>
-                    <input type="email" class="form-control" id="email" placeholder="Ingresa correo electrónico">
+                  <label for="email" class="form-label">Correo Electrónico</label>
+                  <input type="email" id="email" class="form-control" formControlName="email" placeholder="Ingresa correo electrónico" />
                 </div>
-
-                <!-- Teléfono -->
+              
                 <div class="mb-3">
-                    <label for="telefono" class="form-label">Teléfono</label>
-                    <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu teléfono">
+                  <label for="telefono" class="form-label">Teléfono</label>
+                  <input type="tel" id="telefono" class="form-control" formControlName="telefono" placeholder="Ingresa tu teléfono" />
                 </div>
-
-                <!-- Mensaje -->
+              
                 <div class="mb-3">
-                    <label for="mensaje" class="form-label">Mensaje</label>
-                    <textarea class="form-control" id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí"></textarea>
+                  <label for="mensaje" class="form-label">Mensaje</label>
+                  <textarea id="mensaje" class="form-control" formControlName="mensaje" rows="5" placeholder="Escribe tu mensaje aquí"></textarea>
                 </div>
-
-                <!-- Botón de envío -->
+              
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                  <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">Enviar</button>
                 </div>
-            </form>
+              
+                <p *ngIf="successMessage" class="text-success">{{ successMessage }}</p>
+                <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
+              </form>
+              
         </div>
 
         <!-- Información -->
@@ -51,7 +50,7 @@
                     <img src="/assets/ubicationLogo.png" alt="Ubicación" class="icon">
                     <p class="mt-2">San Salvador 9758<br>Mar del Plata</p>
                 </div>
-                <div class="d-flex flex-column align-items-center me-4" (click)="redirectToWhatsApp()">
+                <div class="d-flex flex-column align-items-center me-4" (click)="openWhatsApp()">
                     <img src="/assets/cellphoneLogo.png"  alt="Teléfono" class="icon">
                     <p class="mt-2">+54 9 2234 47-5381</p>
                 </div>

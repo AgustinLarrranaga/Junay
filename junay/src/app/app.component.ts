@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { MapaComponent } from './mapa/mapa.component';
-import { WhatsappButtonComponent } from './whatsapp-button/whatsapp-button.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { ServiciosComponent } from './servicios/servicios.component';
-import { MarcasComponent } from './marcas/marcas.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { ContactComponent } from './contact/contact.component';
-import { FooterComponent } from './footer/footer.component';
+import { MapaComponent } from './components/mapa/mapa.component';
+import { WhatsappButtonComponent } from './components/whatsapp-button/whatsapp-button.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { ServiciosComponent } from './components/servicios/servicios.component';
+import { MarcasComponent } from './components/marcas/marcas.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
