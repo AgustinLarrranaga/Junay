@@ -1,41 +1,49 @@
-<div class="container mt-5 ">
-    <h2 class="text-center mb-4">Servicios</h2>
-    <div class="row justify-content-center">
-      <!-- Preventistas -->
-      <div class="col-md-3">
-        <div class="card text-center mb-4">
-          <div class="card-body">
-            <img src="assets/revendedores.png" class="card-img-top" alt="Revendedores">
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Servicios</h2>
+
+  <!-- Vista para dispositivos móviles -->
+  <div *ngIf="isMobile">
+      <div id="carouselServicios" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="assets/revendedores.png" class="d-block w-100" alt="Revendedores">
+              </div>
+              <div class="carousel-item">
+                  <img src="assets/preventistas.png" class="d-block w-100" alt="Preventistas">
+              </div>
+              <div class="carousel-item">
+                  <img src="assets/shopInLocal.png" class="d-block w-100" alt="Compras en el local">
+              </div>
+              <div class="carousel-item">
+                  <img src="assets/paymentMethod.png" class="d-block w-100" alt="Metodos de pago">
+              </div>
           </div>
-        </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselServicios" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselServicios" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+          </button>
       </div>
-      <!-- Revendedores -->
-      <div class="col-md-3">
-        <div class="card text-center mb-4">
-          <div class="card-body">
-            <img src="assets/preventistas.png" class="card-img-top" alt="Preventistas">
-          </div>
-        </div>
-      </div>
-      <!-- Compras en el local -->
-      <div class="col-md-3">
-        <div class="card text-center mb-4">
-          <div class="card-body">
-            <img src="assets/shopInLocal.png" class="card-img-top" alt="Compras en el local">
-          </div>
-        </div>
-      </div>
-      <!-- Medios de pago -->
-      <div class="col-md-3">
-        <div class="card text-center mb-4">
-          <div class="card-body">
-            <img src="assets/paymentMethod.png" class="card-img-top" alt="Metodos de pago">
-          </div>
-        </div>
-      </div>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-danger" (click)="onClickOferts()">Ver ofertas actuales</button>
     </div>
-    <div class="text-center mt-4">
-      <button class="btn btn-danger" (click)="openWhatsApp()">Hacer un pedido</button>
+  </div>
+
+  <!-- Vista para escritorio -->
+  <div *ngIf="!isMobile" class="row justify-content-center">
+      <div class="col-md-3" *ngFor="let servicio of servicios">
+          <div class="card text-center mb-4">
+              <div class="card-body">
+                  <img [src]="servicio.img" class="card-img-top" [alt]="servicio.alt">
+              </div>
+          </div>
+      </div>
+      <div class="text-center mt-4">
+        <button class="btn btn-danger" (click)="openWhatsApp()">Hacer un pedido</button>
     </div>
+  </div>
+
+
 </div>
-  

@@ -1,22 +1,37 @@
 .carousel-item img {
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .carousel-item img:hover {
-    transform: scale(1.1);
-  }
-  
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-  }
-  
+  transition: transform 0.3s ease-in-out;
+  height: 80px;
+  object-fit: contain;
+  max-width: 100%;
+}
 
-  .conteiner{
-    background: #D9D9D933;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+.carousel-item img:hover {
+  transform: scale(1.1);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+.conteiner {
+  background: #D9D9D933;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* 🎯 Estilos específicos para dispositivos móviles */
+@media (max-width: 768px) {
+  .carousel-item .d-flex {
+      flex-wrap: nowrap;
   }
+
+  .carousel-item img {
+      flex: 0 0 45%; /* Cada imagen ocupa el 45% del contenedor */
+      max-width: 45%;
+      margin: 0 5px;
+  }
+}

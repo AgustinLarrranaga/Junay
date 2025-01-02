@@ -1,31 +1,50 @@
 <div class="welcome-container">
+  <!-- Header -->
   <div class="header">
     <div class="header-content">
       <div class="logo">
         <img src="assets/logoHeader.png" alt="Logo Junay">
       </div>
+      
+      <!-- Menú Hamburguesa (Visible en móviles) -->
+      <div class="menu-toggle" (click)="toggleMenu()">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </div>
 
-      <nav class="nav-menu">
-        <a *ngFor="let link of links" href="#" class="nav-link" [ngClass]="{ active: activeLink === link.id }"
-          (click)="onClickHeader(link.id)">
+      <!-- Menú de Navegación -->
+      <nav class="nav-menu" [ngClass]="{'open': isMenuOpen}">
+        <a *ngFor="let link of links" href="#" class="nav-link" 
+           [ngClass]="{ active: activeLink === link.id }" 
+           (click)="onClickHeader(link.id)">
           {{ link.label }}
         </a>
-        <a href="#" class="button-prices" [ngClass]="{ active: activeLink === 'lista-de-precios' }"
-          (click)="onClickPrices()">
+        <a href="#" class="button-prices" 
+           [ngClass]="{ active: activeLink === 'lista-de-precios' }"
+           (click)="onClickPrices()">
           Lista de precios
         </a>
+        <!-- Botón "Ver ofertas actuales" en el menú móvil -->
+        <a *ngIf="isMobile" href="#" class="nav-link" 
+           (click)="onClickOferts()">
+          Ver ofertas actuales
+        </a>
       </nav>
-
     </div>
   </div>
 
+  <!-- Contenido principal -->
   <div class="welcome-left">
     <h1>Tu distribuidora mayorista en Mar del Plata.</h1>
     <p>
       Más de 15 años distribuyendo las mejores marcas para comerciantes y
       revendedores.
     </p>
-    <button (click)="onClickOferts()" class="cta-button">Ver ofertas actuales</button>
+    <!-- Botón estándar (Solo en escritorio) -->
+    <button *ngIf="!isMobile" (click)="onClickOferts()" class="cta-button">Ver ofertas actuales</button>
+    <button *ngIf="isMobile" (click)="onClickPrices()" class="button-prices">Lista de precios</button>
+
   </div>
 
   <div class="welcome-right">

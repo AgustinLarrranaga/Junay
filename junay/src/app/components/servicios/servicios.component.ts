@@ -1,17 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { WhatsappService } from '../../services/whatspp/whatsapp.service';
+import { CommonModule, NgFor } from '@angular/common';
 
 @Component({
     standalone: true,
     selector: 'app-servicios',
     templateUrl: './servicios.component.html',
-    styleUrls: ['./servicios.component.css']
+    styleUrls: ['./servicios.component.css'],
+    imports: [CommonModule]
 })
-export class ServiciosComponent {
-
+export class ServiciosComponent implements OnInit {
+    isMobile: boolean = false;
+    servicios = [
+        { img: 'assets/preventistas.png', alt: 'Preventistas' },
+        { img: 'assets/revendedores.png', alt: 'Revendedores' },
+        { img: 'assets/shopInLocal.png', alt: 'Compras en el local' },
+        { img: 'assets/paymentMethod.png', alt: 'Metodos de pago' }
+    ];
     constructor(private whatsappService: WhatsappService) { }
+
+    ngOnInit(): void {
+        this.checkIfMobile();
+        window.addEventListener('resize', this.checkIfMobile.bind(this));
+    }
+
+    checkIfMobile(): void {
+        this.isMobile = window.innerWidth <= 997;
+    }
 
     openWhatsApp(): void {
         this.whatsappService.openWhatsApp();
+    }
+
+    onClickOferts(): void {
+        const driveUrl = 'https://drive.google.com/file/d/1Z-3ae4Q2fAQoj1ictEahANJi3Rl7ckbf/view?usp=sharing';
+        window.open(driveUrl);
     }
 }

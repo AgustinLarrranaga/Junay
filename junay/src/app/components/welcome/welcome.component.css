@@ -1,117 +1,242 @@
-/* Contenedor principal con flexbox */
+/* Contenedor principal */
 .welcome-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background-image: url('/assets/fondo.png');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    /* Ocupa toda la altura de la ventana */
-    color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 20px 20px;
+  background-image: url('/assets/fondo.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
 }
 
-/* Columna izquierda: Texto */
+.welcome-left .button-prices {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e60000;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.welcome-left .button-prices:hover {
+  background-color: #b30000;
+}
+
+/* Columna izquierda */
 .welcome-left {
-    flex: 1;
-    /* Ocupa el 50% del espacio */
-    padding: 20px;
+  flex: 1;
+  padding: 20px;
 }
 
 .welcome-left h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .welcome-left p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .cta-button {
-    background-color: #e60000;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
+  background-color: #e60000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .cta-button:hover {
-    background-color: #b00000;
+  background-color: #b00000;
 }
 
-/* Columna derecha: Imagen */
+/* Columna derecha */
 .welcome-right {
-    flex: 1;
-    /* Ocupa el 50% del espacio */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .welcome-right img {
-    max-width: 80%;
-    /* La imagen no ocupa más del 80% del espacio disponible */
-    height: auto;
+  max-width: 463px;
+  height: auto;
 }
 
+/* Header */
 .header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 10;
-    padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 12rem;
+  object-fit: cover;
+}
+
+/* Navegación Desktop */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-menu .nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.nav-menu .nav-link:hover {
+  text-decoration: underline;
+}
+
+.nav-link.active {
+  color: red;
+  font-weight: bold;
+}
+
+.button-prices {
+  padding: 7px 14px;
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button-prices:hover {
+  background-color: #b30000;
+}
+
+/* Menú Hamburguesa */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .hamburger {
+  background: white;
+  height: 3px;
+  width: 25px;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 795px) {
+  /* Header */
+  .header {
+    z-index: 1000;
   }
-  
-  /* Contenedor dentro del header para flex */
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Centra verticalmente los elementos */
-    width: 100%;
-  }
-  
-  /* Logo */
-  .logo img {
-    width: 12rem;
-    object-fit: cover;
-  }
-  
-  /* Menú de navegación */
+
   .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 6rem;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+  }
+
+  .nav-menu.open {
     display: flex;
-    gap: 30px;
-    align-items: center;
   }
-  
-  .nav-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 400;
+
+  .nav-menu .nav-link {
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-align: center;
   }
-  
-  .nav-link.active {
-    color: red;
-    font-weight: bold;
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
   }
-  
-  .button-prices {
-    padding: 7px 14px;
-    background-color: red;
-    color: white;
-    text-decoration: none;
+
+  .menu-toggle .hamburger {
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
     border-radius: 5px;
   }
-  
-  .button-prices:hover {
-    background-color: #b30000;
+
+  /* Botón Lista de Precios en welcome-left */
+  .header .button-prices {
+    display: none;
   }
 
+  .welcome-left .button-prices {
+    display: inline-block;
+    margin-top: 20px;
+    background: #e60000;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+  }
 
+  .welcome-left .button-prices:hover {
+    background-color: #b00000;
+  }
 
+  /* Ocultar botón estándar en móviles */
+  .cta-button {
+    display: none;
+  }
+
+  /* Welcome Container */
+  .welcome-container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 12rem;
+    height: auto;
+    padding-bottom: 5rem;
+    width: auto;
+  }
+
+  .welcome-left {
+    flex: none;
+    width: 100%;
+  }
+
+  .welcome-left h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-left p {
+    font-size: 1rem;
+  }
+
+  /* Imagen derecha oculta en mobile */
+  .welcome-right {
+    display: none;
+  }
+}

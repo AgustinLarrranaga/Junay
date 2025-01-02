@@ -9,14 +9,14 @@ import { CommonModule, NgIf } from '@angular/common';
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
-  imports: [FormsModule,NgIf,ReactiveFormsModule, CommonModule]
+  imports: [FormsModule, NgIf, ReactiveFormsModule, CommonModule]
 })
 export class ContactComponent {
 
   mail = "ventasjunay@gmail.com"
 
 
-
+  isMobile: boolean = false;
   contactForm: FormGroup;
   isSubmitting = false;
   successMessage = '';
@@ -30,6 +30,17 @@ export class ContactComponent {
       mensaje: ['', Validators.required],
     });
   }
+
+
+  ngOnInit(): void {
+    this.checkIfMobile();
+    window.addEventListener('resize', this.checkIfMobile.bind(this));
+  }
+
+  checkIfMobile(): void {
+    this.isMobile = window.innerWidth <= 997;
+  }
+
 
   onSubmit(): void {
     if (this.contactForm.valid) {
@@ -77,8 +88,8 @@ export class ContactComponent {
   }
 
 
-    //TODO> HACER QUE FUNCIONE
-  sendEmail(): void { 
+  //TODO> HACER QUE FUNCIONE
+  sendEmail(): void {
     const email = 'destinatario@example.com'; // Dirección del destinatario
     const subject = 'Consulta desde mi aplicación'; // Asunto del correo
     const body = 'Hola,\n\nQuería consultarte sobre lo siguiente:\n\nSaludos.'; // Cuerpo del correo

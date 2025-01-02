@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Component({
     selector: 'app-welcome',
@@ -11,6 +11,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class WelcomeComponent {
 
     activeLink: string = 'inicio';
+    isMenuOpen: boolean = false; // Estado del menú hamburguesa
+    isMobile: boolean = false; // Nueva variable para detectar versión móvil
 
     @Output() headerClicked = new EventEmitter<string>();
 
@@ -19,11 +21,26 @@ export class WelcomeComponent {
         { label: 'Servicios', id: 'servicios' },
         { label: 'Quiénes somos', id: 'about-us' },
         { label: 'Contacto', id: 'contact' },
-      ];
+    ];
+
+    ngOnInit() {
+        this.checkScreenSize();
+    }
+
+    @HostListener('window:resize')
+    checkScreenSize(): void {
+        this.isMobile = window.innerWidth <= 795;
+    }
+    
 
     onClickHeader(link: string): void {
         this.activeLink = link;
-        this.headerClicked.emit(link)
+        this.headerClicked.emit(link);
+        this.isMenuOpen = false; // Cierra el menú en móviles después de hacer clic
+    }
+
+    toggleMenu(): void {
+        this.isMenuOpen = !this.isMenuOpen;
     }
 
     onClickPrices(): void {
@@ -35,8 +52,4 @@ export class WelcomeComponent {
         const driveUrl = 'https://drive.google.com/file/d/1Z-3ae4Q2fAQoj1ictEahANJi3Rl7ckbf/view?usp=sharing';
         window.open(driveUrl);
     }
-
-
-
 }
-

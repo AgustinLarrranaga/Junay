@@ -1,66 +1,58 @@
 <div class="container mt-5">
-    <div class="row gx-0">
-        <!-- Formulario -->
-        <div class="col-md-6 left-side">
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-                <div class="mb-3">
+  <div class="row gx-0" [ngClass]="{'mobile-view': isMobile}">
+      <!-- Formulario (Visible solo en escritorio) -->
+      <div *ngIf="!isMobile" class="col-md-6 left-side">
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+              <div class="mb-3">
                   <label for="nombre" class="form-label">Apellido y nombre</label>
                   <input type="text" id="nombre" class="form-control" formControlName="nombre" placeholder="Ingresa apellido y nombre" />
-                </div>
-              
-                <div class="mb-3">
+              </div>
+              <div class="mb-3">
                   <label for="email" class="form-label">Correo Electrónico</label>
                   <input type="email" id="email" class="form-control" formControlName="email" placeholder="Ingresa correo electrónico" />
-                </div>
-              
-                <div class="mb-3">
+              </div>
+              <div class="mb-3">
                   <label for="telefono" class="form-label">Teléfono</label>
                   <input type="tel" id="telefono" class="form-control" formControlName="telefono" placeholder="Ingresa tu teléfono" />
-                </div>
-              
-                <div class="mb-3">
+              </div>
+              <div class="mb-3">
                   <label for="mensaje" class="form-label">Mensaje</label>
                   <textarea id="mensaje" class="form-control" formControlName="mensaje" rows="5" placeholder="Escribe tu mensaje aquí"></textarea>
-                </div>
-              
-                <div class="d-grid">
+              </div>
+              <div class="d-grid">
                   <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">Enviar</button>
-                </div>
-              
-                <p *ngIf="successMessage" class="text-success">{{ successMessage }}</p>
-                <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
-              </form>
-              
-        </div>
+              </div>
+              <p *ngIf="successMessage" class="text-success">{{ successMessage }}</p>
+              <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
+          </form>
+      </div>
 
-        <!-- Información -->
-        <div class="col-md-6 right-side text-center">
-            <h2 class="mb-3">Contáctanos</h2>
-            <p>Realizá tus pedidos o consultas fácilmente.</p>
+      <!-- Información -->
+      <div class="col-md-12 right-side text-center">
+          <h2 class="mb-3">Contáctanos</h2>
+          <p>Realizá tus pedidos o consultas fácilmente.</p>
 
-            <h3>Días y horarios de atención</h3>
-            <p>Lunes a viernes: De 8:00 a 16:00</p>
+          <h3>Días y horarios de atención</h3>
+          <p>Lunes a viernes: De 8:00 a 16:00</p>
 
-            <h3>Horarios para retiro de pedidos</h3>
-            <p>Lunes a viernes: De 9:00 a 15:00</p>
-            <p>Recordá pactar previamente por WhatsApp</p>
+          <h3>Horarios para retiro de pedidos</h3>
+          <p>Lunes a viernes: De 9:00 a 15:00</p>
+          <p>Recordá pactar previamente por WhatsApp</p>
 
-            <div class="contact-icons d-flex justify-content-center align-items-center mt-4">
-                <div class="d-flex flex-column align-items-center me-4" (click)="redirectToGoogleMaps()">
-                    <img src="/assets/ubicationLogo.png" alt="Ubicación" class="icon">
-                    <p class="mt-2">San Salvador 9758<br>Mar del Plata</p>
-                </div>
-                <div class="d-flex flex-column align-items-center me-4" (click)="openWhatsApp()">
-                    <img src="/assets/cellphoneLogo.png"  alt="Teléfono" class="icon">
-                    <p class="mt-2">+54 9 2234 47-5381</p>
-                </div>
-                <div class="d-flex flex-column align-items-center" (click)="sendEmail()" >
-                    <img src="/assets/mailLogo.png" alt="Correo" class="icon">
-                    <p class="mt-2">{{mail}}</p>
-                </div>
-            </div>
-
-           
-        </div>
-    </div>
+          <div class="contact-icons d-flex justify-content-center align-items-center mt-4">
+              <div class="d-flex flex-column align-items-center me-4" (click)="redirectToGoogleMaps()">
+                  <img src="/assets/ubicationLogo.png" alt="Ubicación" class="icon">
+                  <p class="mt-2">San Salvador 9758<br>Mar del Plata</p>
+              </div>
+              <div class="d-flex flex-column align-items-center me-4" (click)="openWhatsApp()">
+                  <img src="/assets/cellphoneLogo.png" alt="Teléfono" class="icon">
+                  <p class="mt-2">+54 9 2234 47-5381</p>
+              </div>
+              <div class="d-flex flex-column align-items-center" (click)="sendEmail()">
+                  <img src="/assets/mailLogo.png" alt="Correo" class="icon">
+                  <p class="mt-2">{{mail}}</p>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
