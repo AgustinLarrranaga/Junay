@@ -12,10 +12,10 @@ import { CommonModule, NgFor } from '@angular/common';
 export class ServiciosComponent implements OnInit {
     isMobile: boolean = false;
     servicios = [
-        { img: 'assets/preventistas.png', alt: 'Preventistas' },
-        { img: 'assets/revendedores.png', alt: 'Revendedores' },
-        { img: 'assets/shopInLocal.png', alt: 'Compras en el local' },
-        { img: 'assets/paymentMethod.png', alt: 'Metodos de pago' }
+        { img: 'assets/preventistas.webp', alt: 'Preventistas' },
+        { img: 'assets/revendedores.webp', alt: 'Revendedores' },
+        { img: 'assets/shopInLocal.webp', alt: 'Compras en el local' },
+        { img: 'assets/paymentMethod.webp', alt: 'Metodos de pago' }
     ];
     constructor(private whatsappService: WhatsappService) { }
 
