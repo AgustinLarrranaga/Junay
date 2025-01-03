@@ -224,6 +224,7 @@
   .welcome-left {
     flex: none;
     width: 100%;
+    text-align: left;
   }
 
   .welcome-left h1 {
