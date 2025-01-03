@@ -88,16 +88,10 @@ export class ContactComponent {
   }
 
 
-  //TODO> HACER QUE FUNCIONE
   sendEmail(): void {
-    const email = 'destinatario@example.com'; // Dirección del destinatario
-    const subject = 'Consulta desde mi aplicación'; // Asunto del correo
-    const body = 'Hola,\n\nQuería consultarte sobre lo siguiente:\n\nSaludos.'; // Cuerpo del correo
-
-    // Construcción del enlace mailto
-    const mailtoLink = `mailto:${this.mail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    console.log(mailtoLink)
-    // Redirigir al enlace mailto
-    window.location.href = mailtoLink;
-  }
+    const subject = encodeURIComponent('Consulta desde la pagina web');
+    const body = encodeURIComponent('');
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&to=${this.mail}&su=${subject}&body=${body}`;
+    window.open(gmailUrl, '_blank');
+}
 }

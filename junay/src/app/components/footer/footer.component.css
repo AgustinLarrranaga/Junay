@@ -15,17 +15,18 @@
     height: 13rem;
     width: 100%;
 }
+
 .socials {
-    margin-right: auto; /* Mantiene el elemento a la izquierda */
+    margin-right: auto;
 }
 
 .logo {
-    margin: 0 auto; /* Centra el elemento en el medio */
-    text-align: center; /* Asegura que el contenido esté centrado */
+    margin: 0 auto;
+    text-align: center;
 }
 
 .whatsapp {
-    margin-left: auto; /* Mantiene el elemento a la derecha */
+    margin-left: auto;
 }
 
 .socials, .logo, .whatsapp {
@@ -65,4 +66,37 @@
 
 .whatsapp .btn-whatsapp:hover {
     background-color: darkred;
+}
+
+/* ✅ Estilo para dispositivos móviles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: center; /* Centra los elementos */
+        text-align: center;
+        height: auto; /* Ajusta la altura automáticamente */
+        gap: 1.5rem; /* Espacio entre elementos */
+    }
+
+    .socials {
+        margin: 0;
+        order: 2; /* Redes van en segundo lugar */
+    }
+
+    .logo {
+        margin: 0;
+        order: 1; /* Logo va en primer lugar */
+    }
+
+    .whatsapp {
+        margin: 0;
+        order: 3; /* WhatsApp va en tercer lugar */
+    }
+
+    .logo img {
+        width: 15rem;
+        height: auto;
+    }
+
+   
 }

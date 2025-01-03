@@ -73,13 +73,12 @@
 
 /* Header */
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.8);
 }
 
 .header-content {
@@ -155,7 +154,7 @@
     flex-direction: column;
     background: rgba(0, 0, 0, 0.9);
     position: absolute;
-    top: 6rem;
+    top: 7rem;
     right: 0;
     width: 100%;
     z-index: 1000;
