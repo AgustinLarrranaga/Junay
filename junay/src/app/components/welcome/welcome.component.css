@@ -100,18 +100,18 @@
 }
 
 .nav-menu .nav-link {
-  color: #ffffff;
+  color: white;
   text-decoration: none;
   font-weight: 400;
   cursor: pointer;
 }
 
 .nav-menu .nav-link:hover {
-  text-decoration: underline;
+  color:#e31800;
 }
 
 .nav-link.active {
-  color: red;
+  color:#e31800;
   font-weight: bold;
 }
 
@@ -123,8 +123,11 @@
   border-radius: 5px;
 }
 
+
 .button-prices:hover {
   background-color: #b30000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Agrega sombra al borde */
+
 }
 
 /* Menú Hamburguesa */
@@ -209,6 +212,10 @@
   /* Ocultar botón estándar en móviles */
   .cta-button {
     display: none;
+  }
+
+  .cta-button :hover {
+    background-color: #b00000;
   }
 
   /* Welcome Container */

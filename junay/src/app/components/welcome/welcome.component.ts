@@ -10,7 +10,7 @@ import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 })
 export class WelcomeComponent {
 
-    activeLink: string = 'inicio';
+    activeLink: string = 'welcome';
     isMenuOpen: boolean = false; // Estado del menú hamburguesa
     isMobile: boolean = false; // Nueva variable para detectar versión móvil
 
@@ -24,6 +24,8 @@ export class WelcomeComponent {
     ];
 
     ngOnInit() {
+        console.log(this.activeLink);
+
         this.checkScreenSize();
     }
 
@@ -33,7 +35,7 @@ export class WelcomeComponent {
     }
     
 
-    onClickHeader(link: string): void {
+    onClickHeader(link: string): void {        
         this.activeLink = link;
         this.headerClicked.emit(link);
         this.isMenuOpen = false; // Cierra el menú en móviles después de hacer clic

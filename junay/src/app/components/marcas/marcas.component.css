@@ -1,3 +1,7 @@
+p {
+  margin-bottom: 4rem;
+}
+
 .carousel-item img {
   transition: transform 0.3s ease-in-out;
   height: 80px;

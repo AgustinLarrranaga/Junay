@@ -46,6 +46,10 @@
     height: 24px;
 }
 
+.social-icon :hover{
+    filter: brightness(0) saturate(100%) invert(9%) sepia(96%) saturate(4708%) hue-rotate(357deg) brightness(102%) contrast(119%);
+}
+
 .logo img {
     width: 20rem;
     height: 13rem;

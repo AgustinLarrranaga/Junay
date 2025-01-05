@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container">
   <h2 class="text-center mb-4">Servicios</h2>
 
   <!-- Vista para dispositivos móviles -->
@@ -6,16 +6,16 @@
       <div id="carouselServicios" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
           <div class="carousel-inner">
               <div class="carousel-item active">
-                  <img src="assets/revendedores.webp" class="d-block w-100" loading="lazy" alt="Revendedores">
+                  <img src="assets/revendedores.webp" class="d-block w-100 hover-opacity" loading="lazy" alt="Revendedores">
               </div>
               <div class="carousel-item">
-                  <img src="assets/preventistas.webp" class="d-block w-100" loading="lazy" alt="Preventistas">
+                  <img src="assets/preventistas.webp" class="d-block w-100 hover-opacity" loading="lazy" alt="Preventistas">
               </div>
               <div class="carousel-item">
-                  <img src="assets/shopInLocal.webp" class="d-block w-100" loading="lazy" alt="Compras en el local">
+                  <img src="assets/shopInLocal.webp" class="d-block w-100 hover-opacity" loading="lazy" alt="Compras en el local">
               </div>
               <div class="carousel-item">
-                  <img src="assets/paymentMethod.webp" class="d-block w-100" loading="lazy" alt="Metodos de pago">
+                  <img src="assets/paymentMethod.webp" class="d-block w-100 hover-opacity" loading="lazy" alt="Metodos de pago">
               </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselServicios" data-bs-slide="prev">
@@ -36,7 +36,7 @@
       <div class="col-md-3" *ngFor="let servicio of servicios">
           <div class="card text-center mb-4">
               <div class="card-body">
-                  <img [src]="servicio.img" class="card-img-top" [alt]="servicio.alt" loading="lazy">
+                  <img [src]="servicio.img" class="card-img-top hover-opacity" [alt]="servicio.alt" loading="lazy">
               </div>
           </div>
       </div>

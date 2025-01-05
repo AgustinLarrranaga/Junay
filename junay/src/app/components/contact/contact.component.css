@@ -24,7 +24,7 @@
 }
 
 .left-side {
-    background-color: #1F207C;
+    background-color:#1F207C;
     color: white;
     width: 30%;
 }
@@ -61,6 +61,7 @@ p {
 }
 
 .contact-icons {
+    transition: color 0.3s ease, filter 0.3s ease; /* Transición suave */
     cursor: pointer;
     margin-top: 20px;
     align-items: center;
@@ -68,9 +69,19 @@ p {
     gap: 1.5rem;
 }
 
+.contact-icons :hover img {
+    filter: brightness(0) saturate(100%) invert(9%) sepia(96%) saturate(4708%) hue-rotate(357deg) brightness(102%) contrast(119%);
+}
+
+
+
 .contact-icons .icon {
     width: auto;
     height: 24px;
+}
+
+.contact-icons :hover p {
+    color:#e31800;
 }
 
 .contact-icons p {
@@ -85,6 +96,12 @@ p {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+
+.btn:hover {
+    background-color: #b30000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Agrega sombra al borde */
 }
 
 /* Estilos específicos para móviles */
@@ -131,4 +148,7 @@ p {
     p {
         font-size: 1rem;
     }
+
+
+ 
 }
