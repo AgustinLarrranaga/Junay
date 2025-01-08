@@ -35,19 +35,19 @@
   </div>
 
   <!-- Contenido principal -->
-  <div class="welcome-left">
+  <div class="main-content">
     <h1>Tu distribuidora mayorista en Mar del Plata.</h1>
     <p>
       Más de 15 años distribuyendo las mejores marcas para comerciantes y
       revendedores.
     </p>
+
+    <app-carousel></app-carousel>
     <!-- Botón estándar (Solo en escritorio) -->
     <button *ngIf="!isMobile" (click)="onClickOferts()" class="cta-button">Ver ofertas actuales</button>
     <button *ngIf="isMobile" (click)="onClickPrices()" class="button-prices">Lista de precios</button>
 
   </div>
 
-  <div class="welcome-right">
-    <img src="/assets/logo.webp" alt="Logo de la distribuidora" />
-  </div>
+
 </div>

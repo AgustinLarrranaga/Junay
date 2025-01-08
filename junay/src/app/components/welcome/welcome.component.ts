@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, HostListener, Output } from '@angular/core';
+import { CarouselComponent } from '../carrousel.component';
 
 @Component({
     selector: 'app-welcome',
     standalone: true,
     templateUrl: './welcome.component.html',
     styleUrls: ['./welcome.component.css'],
-    imports: [CommonModule],
+    imports: [CommonModule, CarouselComponent],
 })
 export class WelcomeComponent {
 
@@ -51,7 +52,7 @@ export class WelcomeComponent {
     }
 
     onClickOferts(): void {
-        const driveUrl = 'https://drive.google.com/file/d/1Z-3ae4Q2fAQoj1ictEahANJi3Rl7ckbf/view?usp=sharing';
+        const driveUrl = 'https://drive.google.com/drive/folders/1ZBF8So3tIdaiCbypJMR8ccxhKS1nNk6B';
         window.open(driveUrl);
     }
 }
