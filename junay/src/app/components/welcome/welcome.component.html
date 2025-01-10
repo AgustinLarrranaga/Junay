@@ -36,16 +36,19 @@
 
   <!-- Contenido principal -->
   <div class="main-content">
-    <h1>Tu distribuidora mayorista en Mar del Plata.</h1>
+    <h1>
+      <span style="color: black;">Tu</span> distribuidora mayorista 
+      <span style="color: black;">en</span> Mar del Plata.
+    </h1>
     <p>
       Más de 15 años distribuyendo las mejores marcas para comerciantes y
       revendedores.
     </p>
 
-    <app-carousel></app-carousel>
+    <app-carrousel></app-carrousel>
     <!-- Botón estándar (Solo en escritorio) -->
     <button *ngIf="!isMobile" (click)="onClickOferts()" class="cta-button">Ver ofertas actuales</button>
-    <button *ngIf="isMobile" (click)="onClickPrices()" class="button-prices">Lista de precios</button>
+    <button *ngIf="isMobile" (click)="onClickPrices()" class="cta-button">Lista de precios</button>
 
   </div>
 

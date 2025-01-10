@@ -57,16 +57,21 @@
 }
 
 .whatsapp .btn-whatsapp {
-    background-color: red;
+    background-color: #e60000;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     margin-top: 10px;
     transition: background-color 0.3s ease;
+    font-weight: 400; /* Peso de la fuente moderado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    text-align: center;
+
 }
+
 
 .whatsapp .btn-whatsapp:hover {
     background-color: darkred;

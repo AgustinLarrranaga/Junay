@@ -19,10 +19,17 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'junay';
 
-  handleHeaderClick(linkId: string): void {
-    const element = document.getElementById(linkId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth',block: 'center' }); 
-    }
+  handleHeaderClick(linkId: string): void {    
+    setTimeout(() => {
+      const element = document.getElementById(linkId);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        window.scrollTo({
+          top: window.scrollY + rect.top - (window.innerHeight / 2) + (rect.height / 2),
+          behavior: 'smooth'
+        });
+      } 
+    }, 0); 
   }
+  
 }

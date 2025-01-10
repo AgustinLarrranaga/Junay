@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { WhatsappService } from '../../services/whatspp/whatsapp.service';
 import { CommonModule, NgFor } from '@angular/common';
 
@@ -17,11 +17,16 @@ export class ServiciosComponent implements OnInit {
         { img: 'assets/shopInLocal.webp', alt: 'Compras en el local' },
         { img: 'assets/paymentMethod.webp', alt: 'Metodos de pago' }
     ];
-    constructor(private whatsappService: WhatsappService) { }
+    constructor(
+        private whatsappService: WhatsappService,
+        private el: ElementRef, // Para obtener referencia al DOM del componente
+        private renderer: Renderer2 // Para manipular clases y eventos
+    ) { }
 
     ngOnInit(): void {
         this.checkIfMobile();
         window.addEventListener('resize', this.checkIfMobile.bind(this));
+        this.addTouchListeners();
     }
 
     checkIfMobile(): void {
@@ -36,4 +41,19 @@ export class ServiciosComponent implements OnInit {
         const driveUrl = 'https://drive.google.com/file/d/1Z-3ae4Q2fAQoj1ictEahANJi3Rl7ckbf/view?usp=sharing';
         window.open(driveUrl);
     }
+
+    addTouchListeners(): void {
+        const carouselTrack = this.el.nativeElement.querySelector('.carousel-track');
+
+        // Pausar animación en touch
+        this.renderer.listen(carouselTrack, 'touchstart', () => {
+            this.renderer.addClass(carouselTrack, 'paused');
+        });
+
+        // Reanudar animación al terminar touch
+        this.renderer.listen(carouselTrack, 'touchend', () => {
+            this.renderer.removeClass(carouselTrack, 'paused');
+        });
+    }
+
 }

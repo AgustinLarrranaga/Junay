@@ -1,49 +1,58 @@
 <div class="container">
-  <h2 class="text-center mb-4">Servicios</h2>
+    <h2 class="text-center mb-4">Servicios</h2>
 
-  <!-- Vista para dispositivos móviles -->
-  <div *ngIf="isMobile">
-      <div id="carouselServicios" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
-          <div class="carousel-inner">
-              <div class="carousel-item active">
-                  <img src="assets/revendedores.webp" class="d-block w-100 hover-opacity" loading="lazy" alt="Revendedores">
-              </div>
-              <div class="carousel-item">
-                  <img src="assets/preventistas.webp" class="d-block w-100 hover-opacity" loading="lazy" alt="Preventistas">
-              </div>
-              <div class="carousel-item">
-                  <img src="assets/shopInLocal.webp" class="d-block w-100 hover-opacity" loading="lazy" alt="Compras en el local">
-              </div>
-              <div class="carousel-item">
-                  <img src="assets/paymentMethod.webp" class="d-block w-100 hover-opacity" loading="lazy" alt="Metodos de pago">
-              </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselServicios" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselServicios" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-          </button>
-      </div>
-
-      <div class="text-center mt-4">
-        <button class="btn btn-danger" (click)="onClickOferts()">Ver ofertas actuales</button>
+    <!-- Vista para dispositivos móviles -->
+    <div *ngIf="isMobile">
+        <div id="carouselExample" class="carousel slide carousel-constant">
+            <div class="carousel-inner">
+                <div class="carousel-track">
+                    <!-- Primer grupo de imágenes -->
+                    <div class="carousel-item" (click)="addTouchListeners()">
+                        <div class="carousel-card">
+                            <img src="/assets/revendedores.webp" alt="revendedores" loading="lazy">
+                        </div>
+                        <div class="carousel-card">
+                            <img src="assets/preventistas.webp" alt="compra en el local" loading="lazy">
+                        </div>
+                        <div class="carousel-card">
+                            <img src="assets/paymentMethod.webp"  alt="preventistas" loading="lazy">
+                        </div>
+                        <div class="carousel-card">
+                            <img src="assets/shopInLocal.webp" alt="metodo de pago" loading="lazy">
+                        </div>
+                     
+                       <!--Para que vuelva a iterar el carrousel-->
+                        <div class="carousel-card">
+                            <img src="assets/revendedores.webp" alt="revendedores" loading="lazy">
+                        </div>
+                        <div class="carousel-card">
+                            <img src="assets/revendedores.webp" alt="revendedores" loading="lazy">
+                        </div>
+                        <div class="carousel-card">
+                            <img src="assets/revendedores.webp" alt="revendedores" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-danger" (click)="onClickOferts()">Ver ofertas actuales</button>
+        </div>
     </div>
-  </div>
 
-  <!-- Vista para escritorio -->
-  <div *ngIf="!isMobile" class="row justify-content-center">
-      <div class="col-md-3" *ngFor="let servicio of servicios">
-          <div class="card text-center mb-4">
-              <div class="card-body">
-                  <img [src]="servicio.img" class="card-img-top hover-opacity" [alt]="servicio.alt" loading="lazy">
-              </div>
-          </div>
-      </div>
-      <div class="text-center mt-4">
-        <button class="btn btn-danger" (click)="openWhatsApp()">Hacer un pedido</button>
+    <!-- Vista para escritorio -->
+    <div *ngIf="!isMobile" class="row justify-content-center">
+        <div class="col-md-3" *ngFor="let servicio of servicios">
+            <div class="card text-center mb-4">
+                <div class="card-body">
+                    <img [src]="servicio.img" class="card-img-top hover-opacity" [alt]="servicio.alt" loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-danger" (click)="openWhatsApp()">Hacer un pedido</button>
+        </div>
     </div>
-  </div>
 
 
 </div>

@@ -1,41 +1,90 @@
+.conteiner{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 p {
   margin-bottom: 4rem;
 }
 
-.carousel-item img {
-  transition: transform 0.3s ease-in-out;
-  height: 80px;
-  object-fit: contain;
-  max-width: 100%;
+.carousel-constant {
+  position: relative;
+  width: 100%;
 }
 
-.carousel-item img:hover {
-  transform: scale(1.1);
+.carousel-inner {
+  display: flex;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
+.carousel-track {
+  display: flex;
+  animation: scroll-carousel 30s linear infinite;
+  animation-play-state: running; /* Animación en ejecución por defecto */
+  gap: 2rem;
 }
 
-.conteiner {
-  background: #D9D9D933;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+.carousel-track.paused {
+  animation-play-state: paused; /* Animación en pausa */
 }
 
-/* 🎯 Estilos específicos para dispositivos móviles */
-@media (max-width: 768px) {
-  .carousel-item .d-flex {
-      flex-wrap: nowrap;
+.carousel-item {
+  display: flex;
+  gap: 2rem;
+  align-items: baseline;
+}
+
+.carousel-card {
+  width: 100px;
+  overflow: hidden;
+  align-self: baseline;
+}
+
+.carousel-card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Animación de desplazamiento continuo */
+@keyframes scroll-carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Ajustes para pantallas grandes (desktop) */
+@media (min-width: 1024px) {
+
+  .conteiner{
+    padding-top: 5rem;
+    padding-right: 4rem;
   }
 
-  .carousel-item img {
-      flex: 0 0 45%; /* Cada imagen ocupa el 45% del contenedor */
-      max-width: 45%;
-      margin: 0 5px;
+  .carousel-card {
+    width: 150px; /* Aumenta el tamaño de las tarjetas */
+    margin: 0 1rem; /* Espaciado entre las tarjetas */
+    align-self: baseline;
+    overflow: hidden;
+
+  }
+
+  .carousel-item {
+    gap: 3rem; /* Más espacio entre las tarjetas */
+  }
+
+  .carousel-track {
+    animation: scroll-carousel-desktop 20s linear infinite; /* Ajusta duración para desktops */
+  }
+
+  @keyframes scroll-carousel-desktop {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33%); /* Cambia para mostrar más tarjetas visibles */
+    }
   }
 }

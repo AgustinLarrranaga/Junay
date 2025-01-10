@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, HostListener, Output } from '@angular/core';
-import { CarouselComponent } from '../carrousel.component';
+import { CarouselComponent } from '../carrousel/carrousel.component';
+
 
 @Component({
     selector: 'app-welcome',

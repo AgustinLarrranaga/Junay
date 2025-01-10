@@ -10,11 +10,19 @@
 }
 
 .btn-danger {
-  background-color: #e31800;
+  background-color: #e60000; /* Color rojo intenso */
+  color: white; /* Texto en blanco */
   border: none;
-  border-radius: 3px;
-  padding: 7px 16px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px; /* Bordes redondeados */
+  margin-top: 3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  text-align: center;
+  font-weight: 400; /* Peso de la fuente moderado */
 }
+
 
 .btn-danger:hover {
   opacity: 0.7; 
@@ -23,30 +31,10 @@
 
 .container {
   margin-bottom: 4rem;
-  margin-top: 4rem;
+  margin-top: 7rem;
 
 }
 
-
-.carousel-inner img {
-  width: 100%;
-  max-height: 342px !important;
-  object-fit: contain;
-  /* Ajusta la imagen para que se ajuste al contenedor sin recortarse */
-  max-height: 400px;
-  /* Define una altura máxima para las imágenes */
-}
-
-.carousel {
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-}
 
 .hover-opacity {
   transition: opacity 0.3s ease; /* Transición suave */
@@ -54,4 +42,52 @@
 
 .hover-opacity:hover {
   opacity: 0.7; /* Ajusta la opacidad al hacer hover (0 completamente transparente, 1 completamente opaco) */
+}
+
+
+
+.carousel-constant {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-inner {
+  display: flex;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll-carousel 20s ease-in-out infinite;
+  animation-play-state: running; /* Animación en ejecución por defecto */
+}
+
+.carousel-track.paused {
+  animation-play-state: paused; /* Animación en pausa */
+}
+
+.carousel-item {
+  display: flex;
+  gap: 15px;
+}
+
+.carousel-card {
+  width: 250px;
+  overflow: hidden;
+}
+
+.carousel-card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Animación de desplazamiento continuo */
+@keyframes scroll-carousel {
+  0% {
+      transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(-50%);
+  }
 }

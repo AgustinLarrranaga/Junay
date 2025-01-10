@@ -1,12 +1,19 @@
-/* Contenedor principal */
+/* Welcome Container */
 .welcome-container {
-  display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  height: auto;
+  width: auto;
+  margin-bottom: 4rem;
+}
+
+.main-content {
+  width: 100%;
   align-items: center;
-  justify-content: space-between;
-  padding: 80px 20px 20px;
-  height: 100vh;
-  color: white;
+  justify-content: center;
+  padding: 0px 4rem;
+  margin-top: 11rem;
+  margin-bottom: 10rem;
 }
 
 .main-content .button-prices {
@@ -26,38 +33,39 @@
 }
 
 
-
-.main-content {
-  width: 100%;
-  height: auto;
-  align-items: center;
-  justify-content: center;
-}
-
 .main-content h1 {
-  color:   #1F207C;
+  color: #1F207C;
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-weight: bold;
+  margin-bottom: 2rem;
 }
 
 .main-content p {
   color: black;
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 5rem;
 }
 
 
 .cta-button {
   background-color: #e60000;
+  /* Color rojo intenso */
   color: white;
+  /* Texto en blanco */
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 5px;
+  /* Bordes redondeados */
   margin-top: 3rem;
-
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  /* Sombra sutil */
+  text-align: center;
+  font-weight: 400;
+  /* Peso de la fuente moderado */
 }
+
 
 .cta-button:hover {
   background-color: #b00000;
@@ -69,12 +77,12 @@
   background-image: url('/assets/fondoHeader.webp');
   background-size: cover;
   background-position: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 20px;
+  padding: 5px 15px;
 }
 
 .header-content {
@@ -84,7 +92,7 @@
 }
 
 .logo img {
-  width: 12rem;
+  width: 10rem;
   object-fit: cover;
 }
 
@@ -103,11 +111,11 @@
 }
 
 .nav-menu .nav-link:hover {
-  color:#e31800;
+  color: #e31800;
 }
 
 .nav-link.active {
-  color:#e31800;
+  color: #e31800;
   font-weight: bold;
 }
 
@@ -122,8 +130,8 @@
 
 .button-prices:hover {
   background-color: #b30000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Agrega sombra al borde */
-
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* Agrega sombra al borde */
 }
 
 /* Menú Hamburguesa */
@@ -143,9 +151,25 @@
 
 /* Responsive */
 @media (max-width: 795px) {
+
   /* Header */
   .header {
     z-index: 1000;
+  }
+
+  /* Welcome Container */
+  .welcome-container {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    width: auto;
+  }
+
+  .main-content {
+    width: 100%;
+    padding: 0px 1rem;
+    margin-top: 8rem;
+    margin-bottom: 6rem;
   }
 
   .nav-menu {
@@ -153,7 +177,7 @@
     flex-direction: column;
     background: rgba(0, 0, 0, 0.9);
     position: absolute;
-    top: 7rem;
+    top: 5.5rem;
     right: 0;
     width: 100%;
     z-index: 1000;
@@ -184,46 +208,17 @@
     border-radius: 5px;
   }
 
-  /* Botón Lista de Precios en welcome-left */
+
   .header .button-prices {
     display: none;
   }
 
-  .welcome-left .button-prices {
-    display: inline-block;
-    margin-top: 20px;
-    background: #e60000;
-    color: white;
-    text-align: center;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1rem;
-    text-decoration: none;
-  }
 
-  .welcome-left .button-prices:hover {
-    background-color: #b00000;
-  }
-
-  /* Ocultar botón estándar en móviles */
-  .cta-button {
-    display: none;
-  }
 
   .cta-button :hover {
     background-color: #b00000;
   }
 
-  /* Welcome Container */
-  .welcome-container {
-    flex-direction: column;
-    text-align: center;
-    padding-top: 12rem;
-    height: auto;
-    padding-bottom: 5rem;
-    width: auto;
-  }
+
 
 }
-
-
