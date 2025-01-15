@@ -38,7 +38,7 @@ export class ServiciosComponent implements OnInit {
     }
 
     onClickOferts(): void {
-        const driveUrl = 'https://drive.google.com/file/d/1Z-3ae4Q2fAQoj1ictEahANJi3Rl7ckbf/view?usp=sharing';
+        const driveUrl = 'https://drive.google.com/drive/folders/1ZBF8So3tIdaiCbypJMR8ccxhKS1nNk6B';
         window.open(driveUrl);
     }
 

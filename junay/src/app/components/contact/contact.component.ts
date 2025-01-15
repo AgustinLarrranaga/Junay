@@ -70,23 +70,13 @@ export class ContactComponent {
   }
 
   redirectToGoogleMaps(): void {
-    navigator.geolocation.getCurrentPosition((position) => {
-      const userLat = position.coords.latitude;
-      const userLng = position.coords.longitude;
-
-      const destination = 'San Salvador 9758, B7600GMJ Mar del Plata, Provincia de Buenos Aires';
-
-      const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${encodeURIComponent(destination)}`;
-
-      // Abrir en una nueva pestaña
-      window.open(mapsUrl, '_blank');
-    },
-      (error) => {
-        console.error('Error al obtener la ubicación:', error);
-        alert('No se pudo obtener tu ubicación. Verifica los permisos.');
-      });
+    const destination = 'San Salvador 9758, B7600GMJ Mar del Plata, Provincia de Buenos Aires';
+  
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(destination)}`;
+  
+    window.open(mapsUrl, '_blank'); // Para abrir en una nueva pestaña
   }
-
+  
 
   sendEmail(): void {
     const subject = encodeURIComponent('Consulta desde la pagina web');
